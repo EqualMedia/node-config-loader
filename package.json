@@ -1,6 +1,7 @@
-{ "name" : "config-loader"
-, "version" : "0.0.1"
-, "description" : "Automatically and synchronously load a configuration JSON file"
-, "author": "Mark Wubben"
-, "main": "./config-loader"
+{
+  "name" : "config-loader",
+  "version" : "0.2.0",
+  "description" : "Automatically and synchronously load a configuration JSON file",
+  "author": "Mark Wubben",
+  "main": "./config-loader"
 }
