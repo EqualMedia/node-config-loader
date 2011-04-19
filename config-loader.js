@@ -18,14 +18,14 @@ module.exports = exports = function(name){
   
   var filename = name + ".json";
   var src;
-  var json;
+  var json = exports.cache[filename];
   var tried = [];
   while(configPaths.length && !json){
     src = path.join(configPaths.shift(), filename);
     tried.push(src);
     
     try{
-      json = fs.readFileSync(src, "utf8");
+      json = exports.cache[filename] = fs.readFileSync(src, "utf8");
     }catch(e){}
   }
   
@@ -44,6 +44,8 @@ module.exports = exports = function(name){
     throw new Error("Error parsing " + src);
   }
 };
+
+exports.cache = {};
 
 var NoComment = 0,
     SingleLineComment = 1,
